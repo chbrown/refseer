@@ -13,15 +13,15 @@ The shared data is a SQL dump of citeseerx database with 3 tables: citations, ci
 ### Important fields of tables
 
 * `papers`
-  1. `id`: each pdf will have a different id, this id is referred to as paperid in table citations;
-  2. `cluster`: same paper (may be have more pdfs in our databases) will have a unique cluster number.
+  - `id`: each pdf will have a different id, this id is referenced by `citations`.`paperid`
+  - `cluster`: same paper (may be have more pdfs in our databases) will have a unique cluster number
 * `citations`
-  1. `id`: this id is referred to as citationid in table citationContexts;
-  2. `cluster`: the cluster number of the cited document;
-  3. `paperid`: the id of citing document.
+  - `id`: this id is referenced by `citationContexts`.`citationid`
+  - `cluster`: the cluster number of the cited document
+  - `paperid`: the id of citing document
 * `citationContexts`
-  1. `citationid`: link to the citations table.
-  2. `context`: citation contexts, citations are surrounded by =-= and -=-.
+  - `citationid`: link to the `citations` table
+  - `context`: citation contexts, citations are surrounded by `=-=` and `-=-`
 
 
 ### Downloading Link
